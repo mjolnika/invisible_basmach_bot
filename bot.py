@@ -286,7 +286,7 @@ def logmessage(message):
     bot.send_message(userid, "_Введите сообщение, которое вы хотите передать:_", parse_mode='Markdown')
 
 @bot.message_handler(func=lambda m: True)
-def fowardtext(message):
+def forwardtext(message):
     userid = message.chat.id
     if userid in userdict.keys():
         for k, v in userdict[userid].items():
@@ -296,7 +296,7 @@ def fowardtext(message):
                 bot.send_message(userid, "Спасибо! Мы получили ваше сообщение.")
 
 @bot.message_handler(content_types=['voice'])
-def fowardvoice(message):
+def forwardvoice(message):
     userid = message.chat.id
     if userid in userdict.keys():
         for k, v in userdict[userid].items():
@@ -308,7 +308,7 @@ def fowardvoice(message):
 
 
 @bot.message_handler(content_types=['sticker'])
-def fowardsticker(message):
+def forwardsticker(message):
     userid = message.chat.id
     if userid in userdict.keys():
         for k, v in userdict[userid].items():
@@ -320,7 +320,7 @@ def fowardsticker(message):
 
 
 @bot.message_handler(content_types=['photo'])
-def fowardphoto(message):
+def forwardphoto(message):
     userid = message.chat.id
     if userid in userdict.keys():
         for k, v in userdict[userid].items():
